@@ -20,6 +20,5 @@ A simple and responsive **To-Do List application** built with **React**. This ap
 
 ## 🌐 Live Demo
 
-```text
-https://kavya-kodam.github.io/To-do-list/
-```
+
+🔗 **Live Demo**: [Click here](https://kavya-kodam.github.io/To-do-list/)
