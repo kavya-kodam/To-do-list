@@ -1,6 +1,10 @@
 import React from 'react'
 
-function Todo({todo, index, delTodo}) {
+import { TodoContext } from './Context/TodoContext';
+import { useContext } from 'react'
+
+function Todo({todo, index, }) {
+  const {delTodo} = useContext(TodoContext);
   return (
         <div className='todo'>
           <p>{todo}</p>

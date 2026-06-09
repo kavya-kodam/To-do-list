@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react'
-import './App.css'
-import TodoContainer from './component/TodoContainer'
-import InputContainer from './component/InputContainer'
+import { useEffect, useState } from 'react';
+import './App.css';
+import TodoContainer from './component/TodoContainer';
+import InputContainer from './component/InputContainer';
+import { TodoContext } from './component/Context/TodoContext';
 
 function App() {
 
@@ -32,15 +33,15 @@ function App() {
     localStorage.setItem('todolist', JSON.stringify(Todos));
   }, [Todos]);
 
-
-
-
   return (
-    <main>
-      <h1>To Do List</h1>
-      <InputContainer inputval={inputval} getInput={getInput} addTodo={addTodo} />
-      <TodoContainer Todos={Todos} delTodo={delTodo} />
-    </main>
+    <TodoContext.Provider value={{ inputval, getInput, addTodo, Todos, delTodo }}>
+      <main>
+        <h1>To Do List</h1>
+        <InputContainer />
+        <TodoContainer />
+        </main >
+    </TodoContext.Provider>
+
 
   );
 }
